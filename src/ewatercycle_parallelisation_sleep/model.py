@@ -42,5 +42,5 @@ class ParallelisationSleepMethods(eWaterCycleModel):
 class ParallelisationSleep(ContainerizedModel, ParallelisationSleepMethods):
     """The LeakyBucket eWaterCycle model, with the Container Registry docker image."""
     bmi_image: ContainerImage = ContainerImage(
-        "ghcr.io/daafip/parallelisation-sleep-grpc4bmi:v0.0.2"
+        "ghcr.io/daafip/parallelisation-sleep-grpc4bmi:v0.0.3"
     )
