@@ -31,4 +31,4 @@ dynamic = ["version"]
 
 # This registers the plugin such that it is discoverable by eWaterCycle
 [project.entry-points."ewatercycle.models"]
-LeakyBucket = "ewatercycle_parallelisation_sleep.model:ParallelisationSleep"
+ParallelisationSleep = "ewatercycle_parallelisation_sleep.model:ParallelisationSleep"
