@@ -10,14 +10,13 @@ Uses the [Basic Model Interface (BMI)](https://bmi.readthedocs.io/).
 Install this package alongside your eWaterCycle installation
 
 ```console
-pip install ewatercycle-parallelisation-sleep
+pip install git+https://github.com/Daafip/ewatercycle-test-parallelisation@main
 ```
 
 Then ParallelisationSleep becomes available as one of the eWaterCycle models
 
 ```python
-from ewatercycle.models import Then ParallelisationSleep becomes available as one of the eWaterCycle models
-
+from ewatercycle.models import ParallelisationSleep
 ```
 
 ## Implementing your own model
