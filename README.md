@@ -1,4 +1,6 @@
-# eWaterCycle plugin test parallelisation BMI
+# eWaterCycle plugin test parallelisation
+
+[![Documentation Status](https://readthedocs.org/projects/ewatercycle-test-parallelisation/badge/?version=latest)](https://ewatercycle-test-parallelisation.readthedocs.io/en/latest/?badge=latest)
 
 This repository contains a BMI model which just sleeps: idea is to test parallelisation in eWatercycle with it.  Adds the ["ParrallelisationSleep" model](https://github.com/Daafip/test-parallelisation-BMI). 
 
