@@ -4,7 +4,6 @@ from collections.abc import ItemsView
 from pathlib import Path
 from typing import Any
 
-from ewatercycle.base.forcing import GenericLumpedForcing
 from ewatercycle.base.model import ContainerizedModel, eWaterCycleModel
 from ewatercycle.container import ContainerImage
 
