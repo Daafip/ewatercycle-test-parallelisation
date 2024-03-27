@@ -3,17 +3,17 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [tool.hatch.version]
-path = "src/ewatercycle_leakybucket/__init__.py"
+path = "src/ewatercycle_parallelisation_sleep/__init__.py"
 
 [project]
-name = "ewatercycle-leakybucket"
-description = "Template project for starting a new eWaterCycle plugin"
+name = "ewatercycle-parallelisation-sleep"
+description = "eWaterCycle plugin to test parallelisation which just sleeps"
 readme = "README.md"
 license = "Apache-2.0"
 authors = [
-  { name = "Bart Schilperoort, Peter Kalverla, Stefan Verhoeven", email = "b.schilperoort@esciencecenter.nl" },
+  { name = "David Haasnoot", email = "davidhaasnoot@gmail.com" },
 ]
-keywords = ["ewatercycle", "hydrology"]
+keywords = ["ewatercycle", "hydrology","data assimilation","parallelisation"]
 classifiers = [
   "Intended Audience :: Developers",
   "License :: OSI Approved :: Apache Software License",
@@ -25,10 +25,10 @@ classifiers = [
 
 # Include here only the dependencies for the eWaterCycle wrapped model
 dependencies = [
-  "ewatercycle>=2.1.0",
+  "ewatercycle>=2.0.0",
 ]
 dynamic = ["version"]
 
 # This registers the plugin such that it is discoverable by eWaterCycle
 [project.entry-points."ewatercycle.models"]
-LeakyBucket = "ewatercycle_leakybucket.model:LeakyBucket"
+LeakyBucket = "ewatercycle_parallelisation_sleep.model:ParallelisationSleep"

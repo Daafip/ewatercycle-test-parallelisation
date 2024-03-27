@@ -1,28 +1,28 @@
-# eWaterCycle plugin example: a leaky bucket model
+# eWaterCycle plugin test parallelisation BMI
 
-This repository is a template for adding models to eWatercycle, and will guide you through all required steps.
+This repository contains a BMI model which just sleeps: idea is to test parallelisation in eWatercycle with it.  Adds the ["ParrallelisationSleep" model](https://github.com/Daafip/test-parallelisation-BMI). 
 
-As an example this plugin adds the ["leakybucket" model](https://github.com/eWaterCycle/leakybucket-bmi). 
+Uses the [Basic Model Interface (BMI)](https://bmi.readthedocs.io/).
 
-To use the template, press the green "Use this template" button on GitHub, and replace all instances of "leakybucket"/"LeakyBucket" with your model name.
 
 ## Installation
 
 Install this package alongside your eWaterCycle installation
 
 ```console
-pip install ewatercycle-leakybucket
+pip install ewatercycle-parallelisation-sleep
 ```
 
-Then LeakyBucket becomes available as one of the eWaterCycle models
+Then ParallelisationSleep becomes available as one of the eWaterCycle models
 
 ```python
-from ewatercycle.models import LeakyBucket
+from ewatercycle.models import Then ParallelisationSleep becomes available as one of the eWaterCycle models
+
 ```
 
 ## Implementing your own model
 
-For more information on how this plugin works, and on how to implement your own model see the [plugin guide](plugin_guide.md)
+For more information on how this plugin works, and on how to implement your own model see the [plugin guide](https://github.com/eWaterCycle/ewatercycle-leakybucket/blob/main/plugin_guide.md)
 
 ## License
 

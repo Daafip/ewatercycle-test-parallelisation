@@ -9,30 +9,26 @@ from ewatercycle.base.model import ContainerizedModel, eWaterCycleModel
 from ewatercycle.container import ContainerImage
 
 
-class LeakyBucketMethods(eWaterCycleModel):
-    """The eWatercycle LeakyBucket model.
+class ParallelisationSleepMethods(eWaterCycleModel):
+    """The eWatercycle Sleep model.
     
     Setup args:
-        leakiness: The "leakiness" of the bucket in [d-1].
+        sleepiness: The length of sleep in seconds.
     """
-    forcing: GenericLumpedForcing  # The model requires forcing.
+    forcing: None  # The model requires no forcing.
     parameter_set: None  # The model has no parameter set.
 
     _config: dict = {
-        "forcing_file": "",
-        "precipitation_file": "",
-        "leakiness": 0.05,
+        "sleepiness": 1,
     }
 
     def _make_cfg_file(self, **kwargs) -> Path:
         """Write model configuration file."""
-        self._config["precipitation_file"] = str(self.forcing["pr"])
-        self._config["temperature_file"] = str(self.forcing["tas"])
 
         for kwarg in kwargs:  # Write any kwargs to the config.
             self._config[kwarg] = kwargs[kwarg]
 
-        config_file = self._cfg_dir / "leakybucket_config.json"
+        config_file = self._cfg_dir / "sleepy_config.json"
 
         with config_file.open(mode="w") as f:
             f.write(json.dumps(self._config, indent=4))
@@ -44,8 +40,8 @@ class LeakyBucketMethods(eWaterCycleModel):
         return self._config.items()
 
 
-class LeakyBucket(ContainerizedModel, LeakyBucketMethods):
+class ParallelisationSleep(ContainerizedModel, ParallelisationSleepMethods):
     """The LeakyBucket eWaterCycle model, with the Container Registry docker image."""
     bmi_image: ContainerImage = ContainerImage(
-        "ghcr.io/ewatercycle/leakybucket-grpc4bmi:v0.0.1"
+        "ghcr.io/daafip/parallelisation-sleep-grpc4bmi:v0.0.1"
     )
